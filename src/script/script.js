@@ -5,6 +5,10 @@ function login_page_load(){
     window.location.href="login.html";
   }
 
+function back_home(){
+  window.location.href = "index.html"
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Price Range Slider
   const minPriceSlider = document.getElementById("min-price")
