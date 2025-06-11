@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase - Book Your Parking Slot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">PARKEASE</div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a href="#">Find Parking</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Pune, IND</span>
+                </div>
+                <div class="user-profile">
+                    <img src="/placeholder.svg?height=32&width=32" alt="User Profile" class="profile-img">
+                </div>
+                <div class="settings">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-filters">
+            <div class="filter-item">
+                <i class="fas fa-car"></i>
+                <select id="vehicle-type">
+                    <option value="">Vehicle Type</option>
+                    <option value="car">Car</option>
+                    <option value="bike">Bike</option>
+                    <option value="suv">SUV</option>
+                </select>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+            </div>
+            <div class="filter-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <select id="location">
+                    <option value="">Location</option>
+                    <option value="north">North Zone</option>
+                    <option value="south">South Zone</option>
+                    <option value="east">East Zone</option>
+                    <option value="west">West Zone</option>
+                </select>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+            </div>
+            <div class="filter-item">
+                <i class="far fa-clock"></i>
+                <select id="duration">
+                    <option value="">Duration</option>
+                    <option value="1">1 Hour</option>
+                    <option value="2">2 Hours</option>
+                    <option value="4">4 Hours</option>
+                    <option value="8">8 Hours</option>
+                    <option value="24">24 Hours</option>
+                </select>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+            </div>
+            <div class="filter-item">
+                <i class="fas fa-calendar-alt"></i>
+                <select id="time-slot">
+                    <option value="">Time Slot</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                    <option value="night">Night</option>
+                </select>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+            </div>
+            <div class="price-range">
+                <div class="price-label">Price Range</div>
+                <div class="price-values">₹50 - ₹500</div>
+                <div class="slider-container">
+                    <input type="range" min="50" max="500" value="50" class="slider" id="min-price">
+                    <input type="range" min="50" max="500" value="500" class="slider" id="max-price">
+                    <div class="slider-track"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-hero">
+                    <h2>Find Your Perfect Parking Spot</h2>
+                    <p>Quick and easy booking with ParkEase</p>
+                    <button class="learn-more-btn">Learn More</button>
+                </div>
+
+                <div class="filters-section">
+                    <h3>Filters</h3>
+                    <div class="filter-group">
+                        <h4>Parking Type</h4>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="covered" checked>
+                            <label for="covered">Covered</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="open" checked>
+                            <label for="open">Open</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="valet">
+                            <label for="valet">Valet</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ev-charging">
+                            <label for="ev-charging">EV Charging</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="handicap">
+                            <label for="handicap">Handicap Access</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Security Features</h4>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cctv" checked>
+                            <label for="cctv">CCTV</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="guard" checked>
+                            <label for="guard">Security Guard</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gated">
+                            <label for="gated">Gated Entry</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Payment Options</h4>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="online" checked>
+                            <label for="online">Online Payment</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cash">
+                            <label for="cash">Cash</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="wallet">
+                            <label for="wallet">Digital Wallet</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parking-listings">
+                <div class="listings-header">
+                    <h2>Recommended Parking Spots <span class="count">24</span></h2>
+                    <div class="sort-options">
+                        <span>Sort by:</span>
+                        <select id="sort-by">
+                            <option value="nearest">Nearest</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                        </select>
+                        <button class="view-toggle"><i class="fas fa-th-list"></i></button>
+                    </div>
+                </div>
+
+                <div class="parking-cards">
+                    <!-- Parking Spot 1 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">04 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>City Mall</span>
+                            <img src="/placeholder.svg?height=24&width=24" alt="City Mall" class="provider-logo">
+                        </div>
+                        <h3 class="card-title">Premium Covered Parking</h3>
+                        <div class="card-tags">
+                            <span class="tag">Covered</span>
+                            <span class="tag">CCTV</span>
+                            <span class="tag">24/7</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹50<span>/hr</span></div>
+                            <div class="location">Koregaon Park, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+
+                    <!-- Parking Spot 2 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">04 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>Phoenix Mall</span>
+                            <img src="/placeholder.svg?height=24&width=24" alt="Phoenix Mall" class="provider-logo">
+                        </div>
+                        <h3 class="card-title">Valet Parking</h3>
+                        <div class="card-tags">
+                            <span class="tag">Valet</span>
+                            <span class="tag">Covered</span>
+                            <span class="tag">Security</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹80<span>/hr</span></div>
+                            <div class="location">Viman Nagar, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+
+                    <!-- Parking Spot 3 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">20 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>Central Park</span>
+                            <img src="/placeholder.svg?height=24&width=24" alt="Central Park" class="provider-logo">
+                        </div>
+                        <h3 class="card-title">EV Charging Spot</h3>
+                        <div class="card-tags">
+                            <span class="tag">EV Charging</span>
+                            <span class="tag">Covered</span>
+                            <span class="tag">24/7</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹120<span>/hr</span></div>
+                            <div class="location">Shivaji Nagar, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+
+                    <!-- Parking Spot 4 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">20 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>Metro Station</span>
+                            <img src="/placeholder.svg?height=24&width=24" alt="Metro Station" class="provider-logo">
+                        </div>
+                        <h3 class="card-title">Open Parking</h3>
+                        <div class="card-tags">
+                            <span class="tag">Open</span>
+                            <span class="tag">CCTV</span>
+                            <span class="tag">Metro Access</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹30<span>/hr</span></div>
+                            <div class="location">Swargate, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+
+                    <!-- Parking Spot 5 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">20 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>Amanora Mall</span>
+                            <img src="/placeholder.svg?height=24&width=24" alt="Amanora Mall" class="provider-logo">
+                        </div>
+                        <h3 class="card-title">Premium Valet</h3>
+                        <div class="card-tags">
+                            <span class="tag">Valet</span>
+                            <span class="tag">Covered</span>
+                            <span class="tag">Security</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹100<span>/hr</span></div>
+                            <div class="location">Hadapsar, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+
+                    <!-- Parking Spot 6 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">20 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>IT Park</span>
+                            <img src="/placeholder.svg?height=24&width=24" alt="IT Park" class="provider-logo">
+                        </div>
+                        <h3 class="card-title">Corporate Parking</h3>
+                        <div class="card-tags">
+                            <span class="tag">Covered</span>
+                            <span class="tag">24/7</span>
+                            <span class="tag">Security</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹70<span>/hr</span></div>
+                            <div class="location">Hinjewadi, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

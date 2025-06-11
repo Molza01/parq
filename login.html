@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PARQ Login</title>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+  <link rel="stylesheet" href="src\css\login.css" />
+
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="login-section">
+      <div class="back-btn">←</div>
+      <h1 class="brand">PARQ</h1>
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Welcome Back, Please Enter Your Details</p>
+      
+      <div class="toggle-buttons">
+        <button class="active">Sign In</button>
+        <button>Sign Up</button>
+      </div>
+
+      <form onsubmit="login(event)">
+        <label>Email</label>
+        <input type="email" placeholder="Enter Your Email..." required />
+        
+        <label>Password</label>
+        <input type="password" placeholder="Enter Your Password..." required />
+
+        <div class="forgot">Forgot password?</div>
+        
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+
+      <div class="divider">OR</div>
+      <div class="socials">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" />
+      </div>
+    </div>
+
+    <div class="graphic-section">
+      <img src="https://spline.design/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-icon.efac63d1.png&w=64&q=75" alt="Bot" class="bot-img"/>
+      <button class="ask-btn">Ask Me</button>
+      <div class="spline-label">Built with Spline</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
