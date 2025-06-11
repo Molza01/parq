@@ -178,9 +178,3 @@ document.addEventListener("DOMContentLoaded", () => {
     `
   document.head.appendChild(style)
 })
-
-// Login page
-function login(event) {
-  event.preventDefault();
-  alert("Login clicked! (Add actual login logic here)");
-}
