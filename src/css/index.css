@@ -72,7 +72,11 @@ body {
   gap: 5px;
   font-size: 14px;
 }
+.login-btn{
+    background-color: skyblue;
+    color: #4dabf7;
 
+}
 .profile-img {
   width: 32px;
   height: 32px;
