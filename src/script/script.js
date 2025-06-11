@@ -1,3 +1,10 @@
+console.log("script loaded successfully")
+
+// login page loading from home page 
+function login_page_load(){
+    window.location.href="login.html";
+  }
+
 document.addEventListener("DOMContentLoaded", () => {
   // Price Range Slider
   const minPriceSlider = document.getElementById("min-price")
