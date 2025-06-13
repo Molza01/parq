@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PARQ Sign Up</title>
+  <link rel="stylesheet" href="src/css/login.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="login-section">
+      <div id="back-btn" onclick="window.location.href='index.html'" class="back-btn">←</div>
+      <h1 class="brand">PARQ</h1>
+      <h2>Create Account</h2>
+      <p class="subtitle">Fill in your details to create an account</p>
+
+      <div class="toggle-buttons">
+        <button onclick="window.location.href='index.html'">Sign In</button>
+        <button class="active">Sign Up</button>
+      </div>
+
+      <form onsubmit="signup(event)">
+        <label>Name</label>
+        <input type="text" placeholder="Enter Your Full Name..." required />
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter Your Email..." required />
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter Your Phone Number..." required />
+
+        <label>Password</label>
+        <input type="password" placeholder="Create a Password..." required />
+
+        <button type="submit" class="login-btn">Sign Up</button>
+      </form>
+
+      <div class="divider">OR</div>
+      <div class="socials">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" />
+      </div>
+    </div>
+
+    <div class="graphic-section">
+      <img src="src/assets/robot.png" alt="Bot" class="bot-img"/>
+      <button class="ask-btn">Ask Me</button>
+    </div>
+  </div>
+  <script>
+    function signup(event) {
+      event.preventDefault();
+      alert("Signup successful!");
+      // You can add actual form submission logic here.
+    }
+  </script>
+</body>
+</html>
