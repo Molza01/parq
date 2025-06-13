@@ -164,3 +164,84 @@ form input {
   border-radius: 15px;
   font-size: 12px;
 }
+
+
+/* Tablets (width between 768px and 1024px) */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .login-section,
+  .graphic-section {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .bot-img {
+    width: 20rem;
+  }
+
+  .ask-btn {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile Devices (width <= 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .login-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .graphic-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .bot-img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .brand {
+    font-size: 24px;
+  }
+
+  .toggle-buttons button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    width: 100%;
+  }
+
+  .ask-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .spline-label {
+    font-size: 10px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .socials {
+    gap: 10px;
+  }
+
+  .socials img {
+    width: 25px;
+    height: 25px;
+  }
+}
