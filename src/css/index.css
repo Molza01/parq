@@ -32,7 +32,7 @@ body {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 42px;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -40,7 +40,7 @@ body {
 .main-nav ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 135px;
 }
 
 .main-nav ul li a {
@@ -157,7 +157,7 @@ body {
   margin-bottom: 5px;
 }
 
-.slider-container {
+/* .slider-container {
   position: relative;
   width: 100%;
   height: 5px;
@@ -191,7 +191,57 @@ body {
   height: 5px;
   background: #555;
   border-radius: 3px;
+} */
+ .slider-container {
+  position: relative;
+  height: 40px;
 }
+.slider-container input{
+  background-color: rgb(115, 115, 115);
+  border-radius: 20px;
+  color: rebeccapurple;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  background: transparent;
+  height: 8px;
+}
+
+.slider::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4dabf7;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+}
+
+.slider::-moz-range-thumb {
+  pointer-events: all;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4dabf7;
+  cursor: pointer;
+  border: none;
+}
+
+.slider-track {
+  position: absolute;
+  height: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ccc;
+  border-radius: 4px;
+  z-index: -1;
+}
+
 
 /* Main Content Styles */
 .main-content {
@@ -276,6 +326,10 @@ body {
 }
 
 /* Parking Listings Styles */
+.parking-list-container{
+  margin: 2rem auto;
+  width: 100%;
+}
 .parking-listings {
   flex: 1;
   padding: 30px;
@@ -331,6 +385,79 @@ body {
   color: #666;
   cursor: pointer;
 }
+
+/* intro section */
+.intro-container {
+  margin: 1rem auto;
+  padding: 20px;
+  background-color: black;
+  color: rgb(219, 219, 219);
+  max-width: 85%;
+  border-radius: 15px;
+  text-align: center;
+  animation: slideUp 1s ease-out forwards;
+  opacity: 0;
+  }
+
+  @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: white;
+      line-height: 7rem;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease-in-out 0.5s forwards;
+      opacity: 0;
+      font-weight:900;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out 1s forwards;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out 1.5s forwards;
+    }
+
+    .features li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+  
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p, .features li {
+        font-size: 1rem;
+      }
+    }
 
 /* Parking Cards Styles */
 .parking-cards {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParkEase - Book Your Parking Slot</title>
+    <title>ParQ - Book Your Parking Slot</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -11,7 +11,7 @@
 <body>
     <div class="app-container">
         <header class="header">
-            <div class="logo">PARQ</div>
+            <div class="logo">ParQ </div>
             <nav class="main-nav">
                 <ul>
                     <li class="active"><a href="#">Find Parking</a></li>
@@ -88,18 +88,19 @@
                 <div class="price-label">Price Range</div>
                 <div class="price-values">₹50 - ₹500</div>
                 <div class="slider-container">
-                    <input type="range" min="50" max="500" value="50" class="slider" id="min-price">
-                    <input type="range" min="50" max="500" value="500" class="slider" id="max-price">
+                    <input type="range" min="50" max="500" value="50" class="slider" id="min-price" style="z-index: +9999;" >
+                    <input type="range" min="50" max="500" value="500" class="slider" id="max-price" style="display: none;" >
                     <div class="slider-track"></div>
                 </div>
             </div>
         </div>
 
         <div class="main-content">
-            <div class="sidebar">
+
+                   <div class="sidebar">
                 <div class="sidebar-hero">
                     <h2>Find Your Perfect Parking Spot</h2>
-                    <p>Quick and easy booking with ParkEase</p>
+                    <p>Quick and easy booking with ParQ</p>
                     <button class="learn-more-btn">Learn More</button>
                 </div>
 
@@ -163,12 +164,26 @@
                 </div>
             </div>
 
-            <!-- intro section -->
-<!-- <div class="intro">
-    <div class="para">Welcome To PARQ</div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tenetur, labore dolores neque quae totam vero aperiam atque perferendis rerum!</p>
 
-</div> -->
+  <div class="parking-list-container">
+     
+
+                        <!-- intro section -->
+  <div class="intro-container">
+    <h1>Welcome To ParQ  !!!</h1>
+    <h2>Find... Book... Park...</h2>
+    <p>
+        Reserve your parking spot in seconds with real-time updates and instant access.
+    </p>
+    <ul class="features">
+      <li>✔️ Live slot availability</li>
+      <li>✔️ Nearby parking suggestions</li>
+      <li>✔️ Easy booking & secure payments</li>
+      <li>✔️ Smooth check-in & check-out</li>
+    </ul>
+   
+  </div>
+
             <div class="parking-listings">
                 <div class="listings-header">
                     <h2>Recommended Parking Spots <span class="count">24</span></h2>
@@ -191,7 +206,7 @@
                         <div class="card-date">04 Jun, 2024</div>
                         <div class="card-provider">
                             <span>City Mall</span>
-                            <img src="/placeholder.svg?height=24&width=24" alt="City Mall" class="provider-logo">
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="City Mall" class="provider-logo"> -->
                         </div>
                         <h3 class="card-title">Premium Covered Parking</h3>
                         <div class="card-tags">
@@ -212,7 +227,7 @@
                         <div class="card-date">04 Jun, 2024</div>
                         <div class="card-provider">
                             <span>Phoenix Mall</span>
-                            <img src="/placeholder.svg?height=24&width=24" alt="Phoenix Mall" class="provider-logo">
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="Phoenix Mall" class="provider-logo"> -->
                         </div>
                         <h3 class="card-title">Valet Parking</h3>
                         <div class="card-tags">
@@ -233,7 +248,7 @@
                         <div class="card-date">20 Jun, 2024</div>
                         <div class="card-provider">
                             <span>Central Park</span>
-                            <img src="/placeholder.svg?height=24&width=24" alt="Central Park" class="provider-logo">
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="Central Park" class="provider-logo"> -->
                         </div>
                         <h3 class="card-title">EV Charging Spot</h3>
                         <div class="card-tags">
@@ -254,7 +269,7 @@
                         <div class="card-date">20 Jun, 2024</div>
                         <div class="card-provider">
                             <span>Metro Station</span>
-                            <img src="/placeholder.svg?height=24&width=24" alt="Metro Station" class="provider-logo">
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="Metro Station" class="provider-logo"> -->
                         </div>
                         <h3 class="card-title">Open Parking</h3>
                         <div class="card-tags">
@@ -275,7 +290,7 @@
                         <div class="card-date">20 Jun, 2024</div>
                         <div class="card-provider">
                             <span>Amanora Mall</span>
-                            <img src="/placeholder.svg?height=24&width=24" alt="Amanora Mall" class="provider-logo">
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="Amanora Mall" class="provider-logo"> -->
                         </div>
                         <h3 class="card-title">Premium Valet</h3>
                         <div class="card-tags">
@@ -296,7 +311,7 @@
                         <div class="card-date">20 Jun, 2024</div>
                         <div class="card-provider">
                             <span>IT Park</span>
-                            <img src="/placeholder.svg?height=24&width=24" alt="IT Park" class="provider-logo">
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="IT Park" class="provider-logo"> -->
                         </div>
                         <h3 class="card-title">Corporate Parking</h3>
                         <div class="card-tags">
@@ -310,7 +325,72 @@
                         </div>
                         <button class="details-btn">Details</button>
                     </div>
+
+                     <!-- Parking Spot 7 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">20 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>Katraj Park</span>
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="IT Park" class="provider-logo"> -->
+                        </div>
+                        <h3 class="card-title">Municipal Parking</h3>
+                        <div class="card-tags">
+                            <span class="tag">Covered</span>
+                            <span class="tag">24/7</span>
+                            <span class="tag">Online Payment</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹50<span>/hr</span></div>
+                            <div class="location">Katraj, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+
+                      <!-- Parking Spot 8 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">20 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>Baner IT Park</span>
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="Central Park" class="provider-logo"> -->
+                        </div>
+                        <h3 class="card-title">EV , 4-Wheeler</h3>
+                        <div class="card-tags">
+                            <span class="tag">EV Charging</span>
+                            <span class="tag">Valet</span>
+                            <span class="tag">24/7</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹100<span>/hr</span></div>
+                            <div class="location"> Baner, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
+
+                    
+                    <!-- Parking Spot 9 -->
+                    <div class="parking-card">
+                        <div class="bookmark"><i class="far fa-bookmark"></i></div>
+                        <div class="card-date">04 Jun, 2024</div>
+                        <div class="card-provider">
+                            <span>Sinhgad College</span>
+                            <!-- <img src="/placeholder.svg?height=24&width=24" alt="Phoenix Mall" class="provider-logo"> -->
+                        </div>
+                        <h3 class="card-title">Private Parking</h3>
+                        <div class="card-tags">
+                            <span class="tag">Valet</span>
+                            <span class="tag">Online Payment</span>
+                            <span class="tag">Security</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price">₹70<span>/hr</span></div>
+                            <div class="location">Vadgaon, Pune</div>
+                        </div>
+                        <button class="details-btn">Details</button>
+                    </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

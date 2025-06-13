@@ -12,13 +12,13 @@ body {
 .container {
   display: flex;
   height: 100vh;
-  background:black
+ 
 }
 
 .login-section {
   width: 50%;
-  background: #fff;
-  padding: 70px 70px;
+
+  padding: 13px 70px;
   display: flex;
   flex-direction: column;
   /* border-radius: 5rem; */
@@ -94,7 +94,7 @@ form input {
   margin-top: 20px;
   cursor: pointer;
   width: fit-content;
-  margin: 3rem auto;
+  margin: 2rem auto;
   transition: transform 0.2s ease-in-out;
 }
 .login-btn:hover{
