@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - PARQ</title>
+  <link rel="stylesheet" href="src\css\faq.css" />
+  <link rel="stylesheet" href="src/css/index.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="logo">ParQ </div>
+      <!-- Hamburger Icon -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <!-- Navigation Menu -->
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#">Find Parking</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <div class="location">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Pune, IND</span>
+        </div>
+        <div class="user-profile">
+          <button onclick="login_page_load()" id="login-btn" class="login-btn , learn-more-btn"> Login /
+            Sign-up</button>
+          <!-- <img src="/placeholder.svg?height=32&width=32" alt="User Profile" class="profile-img"> -->
+        </div>
+        <div class="settings">
+          <i class="fas fa-cog"></i>
+        </div>
+        <div class="notifications">
+          <i class="fas fa-bell"></i>
+        </div>
+      </div>
+    </header>
+  </div>
+  </div>
+
+
+  <div class="faq-container">
+    <h1 class="faq-title">Frequently Asked Questions</h1>
+    <div class="accordion">
+      <!-- Repeat this block for each question -->
+      <div class="accordion-item">
+        <div class="accordion-header">What is PARQ?</div>
+        <div class="accordion-body">PARQ is a platform that helps users connect, ask, and explore knowledge
+          efficiently.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">How can I create an account?</div>
+        <div class="accordion-body">Click on Sign Up and fill in your details to create a new account.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Is PARQ free to use?</div>
+        <div class="accordion-body">Yes, the basic version of PARQ is completely free to use.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Can I use PARQ on mobile?</div>
+        <div class="accordion-body">Yes, PARQ is fully responsive and works on all devices.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">How do I reset my password?</div>
+        <div class="accordion-body">Use the "Forgot password?" link on the login page to reset your password.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Is my data secure on PARQ?</div>
+        <div class="accordion-body">We use the latest encryption technologies to keep your data safe.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Can I delete my account?</div>
+        <div class="accordion-body">Yes, contact our support team to request account deletion.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Does PARQ support multiple languages?</div>
+        <div class="accordion-body">Currently, PARQ supports English. More languages are coming soon!</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">How do I ask a question?</div>
+        <div class="accordion-body">After logging in, use the "Ask Me" button to start your query.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Who can I contact for help?</div>
+        <div class="accordion-body">Reach out to support@parq.com for any assistance.</div>
+      </div>
+    </div>
+  </div>
+  <script src="src/script/script.js"></script>
+</body>
+
+</html>

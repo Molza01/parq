@@ -553,3 +553,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize filters on page load
     filterParkingSpots();
 })
+
+
+// faq page 
+
+const headers = document.querySelectorAll('.accordion-header');
+
+headers.forEach(header => {
+  header.addEventListener('click', () => {
+    const activeItem = document.querySelector('.accordion-item.active');
+    
+    if (activeItem && activeItem !== header.parentElement) {
+      activeItem.classList.remove('active');
+    }
+
+    header.parentElement.classList.toggle('active');
+  });
+});
+
+// Navbar menu hamburger
+function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    nav.classList.toggle("show");
+  }
+
