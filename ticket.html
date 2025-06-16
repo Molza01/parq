@@ -19,31 +19,48 @@
                 <div class="eco-badge">🌱 Eco-Friendly</div>
             </div>
             
-            <div class="ticket-content">
+            <div id="ticket-content" class="ticket-content">
                 <div class="info-row">
                     <span class="info-label">👤 Name:</span>
-                    <span class="info-value">Rohit Bhalekar</span>
+                    <span  class="info-value">Rohit Bhalekar</span>
                 </div>
                 
                 <div class="info-row">
                     <span class="info-label">🅿️ Slot:</span>
-                    <span class="info-value">P-102</span>
+                    <span id="slot" class="info-value"></span>
                 </div>
                 
                 <div class="info-row">
                     <span class="info-label">📅 Date:</span>
-                    <span class="info-value">17 June 2025</span>
+                    <span id="date" class="info-value"></span>
                 </div>
                 
                 <div class="info-row">
                     <span class="info-label">⏰ Time:</span>
-                    <span class="info-value">10:00 AM - 12:00 PM</span>
+                    <span id="time" class="info-value"></span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Duration: </span>
+                    <span id="duration" class="info-value"></span>
                 </div>
                 
                 <div class="info-row">
                     <span class="info-label">🎫 Booking ID:</span>
-                    <span class="info-value">#PKG56849</span>
+                    <span id="bookingid" class="info-value"></span>
                 </div>
+
+                 <div class="info-row">
+                    <span class="info-label"> Vehicle Type:</span>
+                    <span id="vehicletype" class="info-value"></span>
+                </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Amount:</span>
+                    <span id="Amount" class="info-value"></span>
+                </div>
+                 
+
             </div>
         </div>
 
@@ -60,19 +77,26 @@
 
     <!-- Hidden PDF-safe ticket -->
 <div id="ticket-pdf" style="display: none; background: white; padding: 20px; font-family: 'Poppins', sans-serif; width: 100%; max-width: 500px;">
-    <h2 style="text-align: center;">🚗 Parking e-Ticket</h2>
-    <p><strong>Name:</strong> Rohit Bhalekar</p>
-    <p><strong>Slot:</strong> P-102</p>
-    <p><strong>Date:</strong> 17 June 2025</p>
-    <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-    <p><strong>Booking ID:</strong> #PKG56849</p>
-    <hr style="margin: 20px 0;">
-    <p style="text-align: center; font-size: 0.9rem; color: #555;">
-        🌱 Thank you for choosing eco-friendly parking!
-    </p>
+  <h2 style="text-align: center;">🚗 Parking e-Ticket</h2>
+
+  <div><span>Name:</span> <span id="name">Rohit Bhalekar</span></div>
+  <div><span>Slot:</span> <span id="slot"></span></div>
+  <div><span>Date:</span> <span id="date"></span></div>
+  <div><span>Time:</span> <span id="time"></span></div>
+  <div><span>Duration:</span> <span id="duration"></span></div>
+  <div><span>Booking ID:</span> <span id="bookingid"></span></div>
+  <div><span>Vehicle:</span> <span id="vehicletype"></span></div>
+  <div><span>Amount:</span> <span id="amount"></span></div>
+
+  <hr style="margin: 20px 0;">
+  <div style="text-align: center; font-size: 0.9rem; color: #555;">
+    🌱 Thank you for choosing eco-friendly parking!
+  </div>
 </div>
+
 </body>
 
 <!-- externally loaded script file -->
- <script src="src/script/ETicket.js"></script>
+ <script  src="src/script/ETicket.js"></script>
+ <script src="src/script/booking.js"></script>
 </html>

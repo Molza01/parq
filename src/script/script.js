@@ -459,9 +459,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const parkingLocation = parkingCard.querySelector(".location").textContent
             const parkingPrice = parkingCard.querySelector(".price").textContent
 
-            alert(
-                `Booking details for ${parkingTitle}\nLocation: ${parkingLocation}\nPrice: ${parkingPrice}\n\nThis would open a detailed booking page in a real application.`,
-            )
+            // alert(
+            //     `Booking details for ${parkingTitle}\nLocation: ${parkingLocation}\nPrice: ${parkingPrice}\n\nThis would open a detailed booking page in a real application.`,
+            // )
+             window.location.href="booking.html";
+
         })
     })
 
