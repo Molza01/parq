@@ -1,3 +1,29 @@
+// intro animation script
+const words = ["Parking", "Booking", "Payment"];
+let i = 0, j = 0;
+let currentWord = "";
+let isDeleting = false;
+const typewriter = document.getElementById("typewriter-text");
+
+function type() {
+  currentWord = words[i];
+  if (isDeleting) {
+    typewriter.textContent = currentWord.substring(0, j--);
+    if (j < 0) {
+      isDeleting = false;
+      i = (i + 1) % words.length;
+    }
+  } else {
+    typewriter.textContent = currentWord.substring(0, j++);
+    if (j > currentWord.length + 2) {
+      isDeleting = true;
+    }
+  }
+  setTimeout(type, isDeleting ? 60 : 120);
+}
+type();
+
+
 class ParkingBookingSystem {
     constructor() {
         this.selectedDate = null;
@@ -481,7 +507,7 @@ class ParkingBookingSystem {
     }
     
     confirmBooking() {
-        const bookingId = 'PB' + Math.random().toString(36).substr(2, 9).toUpperCase();
+       const bookingId = 'PB' + Math.random().toString(36).substr(2, 9).toUpperCase();
         const currentVehicle = this.vehicleTypes[this.currentVehicleIndex];
         
         // Get display elements safely
@@ -490,7 +516,7 @@ class ParkingBookingSystem {
         const selectedDurationText = document.getElementById('selected-duration')?.textContent || this.calculateDurationText();
         const totalAmountText = document.getElementById('total-amount')?.textContent || 'Rs. 0';
         
-        alert(`Booking Confirmed! 
+       console.log(`Booking Confirmed! 
         
 Booking ID: ${bookingId}
 Date: ${selectedDateText}
@@ -501,8 +527,26 @@ Parking Spots: ${this.selectedSpots.join(', ')}
 Total Amount: ${totalAmountText}
 
 Thank you for choosing Park Easy!`);
-        
+
+
+
+// URL METHOD TO TO PASSES THE VALUES FOR TICKETS (VALUES ARE ATAAKEN IN  ETicket.js file )
+const params = new URLSearchParams({
+
+    Bookingid : bookingId , 
+    date : selectedDateText ,
+    time : selectedTimeText ,
+    duration :  selectedDurationText,
+    vehicle : currentVehicle.name , 
+    slot : this.selectedSpots.join(', ') , 
+    amount : totalAmountText , 
+
+});
+
+window.location.href = "ticket.html?" + params.toString();
+
         this.resetBooking();
+       
     }
     
     calculateDurationText() {

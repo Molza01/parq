@@ -1,25 +1,26 @@
 
+
 function downloadTicket() {
-    const ticket = document.getElementById("ticket-pdf");
+  const ticket = document.getElementById("ticket-pdf");
 
-    // Temporarily make ticket visible for rendering
-    ticket.style.display = "block";
+  // Temporarily show the ticket
+  ticket.style.display = "block";
 
-    const opt = {
-        margin:       [10, 10, 10, 10],
-        filename:     'eco_parking_ticket.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, scrollY: 0 },
-        jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' }
-    };
+  const opt = {
+    margin:       10,
+    filename:     'eco_parking_ticket.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2, scrollY: 0 },
+    jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' }
+  };
 
-    // Small delay to ensure rendering
-    setTimeout(() => {
-        html2pdf().set(opt).from(ticket).save().then(() => {
-            ticket.style.display = "none";
-        });
-    }, 100); // small delay helps rendering sometimes
+  setTimeout(() => {
+    html2pdf().set(opt).from(ticket).save().then(() => {
+      ticket.style.display = "none"; // Hide it again
+    });
+  }, 300); // Wait to ensure DOM updates before snapshot
 }
+
 
         // Add some interactive sparkle effect on click
         document.addEventListener('click', function(e) {
@@ -61,3 +62,21 @@ function downloadTicket() {
             }
         `;
         document.head.appendChild(style);
+
+        // getting ticket content values
+
+        const query = new URLSearchParams(window.location.search);
+
+        document.getElementById('slot').textContent = query.get("slot");
+
+        document.getElementById('date').textContent = query.get("date");
+
+        document.getElementById('time').textContent = query.get("time") ;
+
+        document.getElementById('duration').textContent = query.get("duration");
+
+        document.getElementById('bookingid').textContent = query.get("Bookingid");
+
+        document.getElementById('vehicletype').textContent = query.get("vehicle");
+
+        document.getElementById('Amount').textContent = query.get("amount");

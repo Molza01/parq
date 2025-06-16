@@ -1,241 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parking Booking System</title>
-    <link rel="stylesheet" href="src/css/booking.css">
-    <link rel="stylesheet" href="src/css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="src/css/booking.css" />
+    <link rel="stylesheet" href="src/css/index.css" />
+  </head>
+  <body>
     <div class="container">
-        <!-- Header -->
-         <header class="header">
-            <div class="logo">ParQ </div>
-            <nav class="main-nav">
-                <ul>
-                    <li class="active"><a href="#">Find Parking</a></li>
-                    <li><a href="#">Locations</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="faq.html">Help / FAQ</a></li>
-                    <!-- <li><a href="#">Pricing</a></li> -->
-                </ul>
-            </nav>
-            <div class="user-actions">
-                <div class="location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Pune, IND</span>
-                </div>
-                <div class="user-profile">
-                    <button onclick="login_page_load()" id="login-btn" class="login-btn , learn-more-btn"> Login / Sign-up</button>
-                    <!-- <img src="/placeholder.svg?height=32&width=32" alt="User Profile" class="profile-img"> -->
-                </div>
-                <div class="settings">
-                    <i class="fas fa-cog"></i>
-                </div>
-                <div class="notifications">
-                    <i class="fas fa-bell"></i>
-                </div>
-            </div>
-        </header>
-        <header class="main">
-            <h1>Park Easy</h1>
-            <p>Book Your Parking Spot</p>
-        </header>
-
-       
-
-        <!-- Date Selection -->
-        <section class="date-section">
-            <h2>Select Date</h2>
-            <div class="date-picker">
-                <div class="date-item active" data-date="2025-06-16">
-                    <span class="day">MON</span>
-                    <span class="date">16</span>
-                    <span class="month">JUN</span>
-                </div>
-                <div class="date-item today" data-date="2025-06-17">
-                    <span class="day">TUE</span>
-                    <span class="date">17</span>
-                    <span class="month">JUN</span>
-                </div>
-                <div class="date-item" data-date="2025-06-18">
-                    <span class="day">WED</span>
-                    <span class="date">18</span>
-                    <span class="month">JUN</span>
-                </div>
-                <div class="date-item" data-date="2025-06-19">
-                    <span class="day">THU</span>
-                    <span class="date">19</span>
-                    <span class="month">JUN</span>
-                </div>
-                <div class="date-item" data-date="2025-06-20">
-                    <span class="day">FRI</span>
-                    <span class="date">20</span>
-                    <span class="month">JUN</span>
-                </div>
-            </div>
-        </section>
-
-         <!-- Time Selection -->
-        <section class="time-section">
-            <h2>Select Time Duration</h2>
-            <div class="time-selection-container">
-                <div class="time-input-group">
-                    <label for="start-time">Start Time</label>
-                    <div class="time-dropdown">
-                        <button class="time-dropdown-btn" id="start-time-btn">
-                            <span id="start-time-display">09:00 AM</span>
-                            <span class="dropdown-arrow">▼</span>
-                        </button>
-                        <div class="time-dropdown-menu" id="start-time-menu">
-                            <div class="time-option" data-time="09:00">09:00 AM</div>
-                            <div class="time-option" data-time="10:00">10:00 AM</div>
-                            <div class="time-option" data-time="11:00">11:00 AM</div>
-                            <div class="time-option" data-time="12:00">12:00 PM</div>
-                            <div class="time-option" data-time="13:00">01:00 PM</div>
-                            <div class="time-option" data-time="14:00">02:00 PM</div>
-                            <div class="time-option" data-time="15:00">03:00 PM</div>
-                            <div class="time-option" data-time="16:00">04:00 PM</div>
-                            <div class="time-option" data-time="17:00">05:00 PM</div>
-                            <div class="time-option" data-time="18:00">06:00 PM</div>
-                            <div class="time-option" data-time="19:00">07:00 PM</div>
-                            <div class="time-option" data-time="20:00">08:00 PM</div>
-                            <div class="time-option" data-time="21:00">09:00 PM</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="time-separator">
-                    <span>to</span>
-                </div>
-
-                <div class="time-input-group">
-                    <label for="end-time">End Time</label>
-                    <div class="time-dropdown">
-                        <button class="time-dropdown-btn" id="end-time-btn">
-                            <span id="end-time-display">10:00 AM</span>
-                            <span class="dropdown-arrow">▼</span>
-                        </button>
-                        <div class="time-dropdown-menu" id="end-time-menu">
-                            <div class="time-option" data-time="09:00">09:00 AM</div>
-                            <div class="time-option" data-time="10:00">10:00 AM</div>
-                            <div class="time-option" data-time="11:00">11:00 AM</div>
-                            <div class="time-option" data-time="12:00">12:00 PM</div>
-                            <div class="time-option" data-time="13:00">01:00 PM</div>
-                            <div class="time-option" data-time="14:00">02:00 PM</div>
-                            <div class="time-option" data-time="15:00">03:00 PM</div>
-                            <div class="time-option" data-time="16:00">04:00 PM</div>
-                            <div class="time-option" data-time="17:00">05:00 PM</div>
-                            <div class="time-option" data-time="18:00">06:00 PM</div>
-                            <div class="time-option" data-time="19:00">07:00 PM</div>
-                            <div class="time-option" data-time="20:00">08:00 PM</div>
-                            <div class="time-option" data-time="21:00">09:00 PM</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="duration-display">
-                <span class="duration-label">Duration:</span>
-                <span class="duration-value" id="duration-display">1 hour</span>
-            </div>
-        </section>
-
-        <!-- Vehicle Selection -->
-         <section class="vehicle-section">
-            <h2>Select Vehicle Type</h2>
-            <div class="vehicle-display">
-                <div class="vehicle-icon" id="vehicle-icon">
-                    🛵
-                </div>
-                <div class="vehicle-name" id="vehicle-name">
-                    2 Wheeler
-                </div>
-            </div>
-            
-            <div class="vehicle-selector">
-                <button class="vehicle-nav-btn" id="prev-vehicle">‹</button>
-                <div class="vehicle-type-indicator">
-                    <span id="current-vehicle-type">2 Wheeler</span>
-                </div>
-                <button class="vehicle-nav-btn" id="next-vehicle">›</button>
-            </div>
-            
-            <!-- Pricing Tiers -->
-            <div class="pricing-tiers">
-                <div class="tier" data-tier="classic-plus">
-                    <h4>Classic Plus</h4>
-                    <p class="price" id="classic-plus-price">Rs. 149</p>
-                    <p class="status available">Available</p>
-                </div>
-                <div class="tier" data-tier="prime">
-                    <h4>Prime</h4>
-                    <p class="price" id="prime-price">Rs. 149</p>
-                    <p class="status available">Available</p>
-                </div>
-                <div class="tier" data-tier="classic">
-                    <h4>Classic</h4>
-                    <p class="price" id="classic-price">Rs. 99</p>
-                    <p class="status available">Available</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Parking Layout -->
-        <section class="parking-section" id="parking-layout" style="display: none;">
-            <h2>Select Parking Spot</h2>
-            
-            <!-- Legend -->
-            <div class="legend">
-                <div class="legend-item">
-                    <span class="legend-color available"></span>
-                    <span>Available</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color selected"></span>
-                    <span>Selected</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color bestseller"></span>
-                    <span>Bestseller</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color occupied"></span>
-                    <span>Occupied</span>
-                </div>
-            </div>
-
-            <!-- Parking Grid -->
-            <div class="parking-grid" id="parking-grid">
-                <!-- Parking spots will be generated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Booking Summary -->
-        <section class="summary-section" id="booking-summary" style="display: none;">
-            <div class="summary-card">
-                <h3>Booking Summary</h3>
-                <div class="summary-details">
-                    <p><strong>Location:</strong> <span id="selected-location">-</span></p>
-                    <p><strong>Date:</strong> <span id="selected-date">-</span></p>
-                    <p><strong>Time:</strong> <span id="selected-time">-</span></p>
-                    <p><strong>Parking Spot:</strong> <span id="selected-spot">-</span></p>
-                    <p><strong>Vehicle Type:</strong> <span id="selected-tier">-</span></p>
-                    <p><strong>Total Amount:</strong> <span id="total-amount">Rs. 0</span></p>
-                </div>
-                <button class="book-btn" id="confirm-booking">Confirm Booking</button>
-            </div>
-        </section>
-
-        <!-- Action Buttons -->
-        <div class="action-buttons">
-            <button class="btn-secondary" id="back-btn" style="display: none;">Back</button>
-            <button class="btn-primary" id="next-btn">Select Spots</button>
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">ParQ</div>
+        <nav class="main-nav">
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="faq.html">Help / FAQ</a></li>
+            <!-- <li><a href="#">Pricing</a></li> -->
+          </ul>
+        </nav>
+        <div class="user-actions">
+          <div class="location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Pune, IND</span>
+          </div>
+          <div class="user-profile">
+            <button
+              onclick="login_page_load()"
+              id="login-btn"
+              class="login-btn , learn-more-btn"
+            >
+              Login / Sign-up
+            </button>
+            <!-- <img src="/placeholder.svg?height=32&width=32" alt="User Profile" class="profile-img"> -->
+          </div>
+          <div class="settings">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div class="notifications">
+            <i class="fas fa-bell"></i>
+          </div>
         </div>
+      </header>
+      <header class="main">
+
+        <!-- intro animation -->
+       <section class="intro-typewriter">
+  <h1>
+    <span class="prefix">Smart</span>
+    <span id="typewriter-text"></span><span class="cursor"></span>
+  </h1>
+  <p class="subtext">Find • Book • Park</p>
+</section>
+
+
+      </header>
+
+      <!-- Date Selection -->
+      <section class="date-section">
+        <h2>Select Date</h2>
+        <div class="date-picker">
+          <div class="date-item active" data-date="2025-06-16">
+            <span class="day">MON</span>
+            <span class="date">16</span>
+            <span class="month">JUN</span>
+          </div>
+          <div class="date-item today" data-date="2025-06-17">
+            <span class="day">TUE</span>
+            <span class="date">17</span>
+            <span class="month">JUN</span>
+          </div>
+          <div class="date-item" data-date="2025-06-18">
+            <span class="day">WED</span>
+            <span class="date">18</span>
+            <span class="month">JUN</span>
+          </div>
+          <div class="date-item" data-date="2025-06-19">
+            <span class="day">THU</span>
+            <span class="date">19</span>
+            <span class="month">JUN</span>
+          </div>
+          <div class="date-item" data-date="2025-06-20">
+            <span class="day">FRI</span>
+            <span class="date">20</span>
+            <span class="month">JUN</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Time Selection -->
+      <section class="time-section">
+        <h2>Select Time Duration</h2>
+        <div class="time-selection-container">
+          <div class="time-input-group">
+            <label for="start-time">Start Time</label>
+            <div class="time-dropdown">
+              <button class="time-dropdown-btn" id="start-time-btn">
+                <span id="start-time-display">09:00 AM</span>
+                <span class="dropdown-arrow">▼</span>
+              </button>
+              <div class="time-dropdown-menu" id="start-time-menu">
+                <div class="time-option" data-time="09:00">09:00 AM</div>
+                <div class="time-option" data-time="10:00">10:00 AM</div>
+                <div class="time-option" data-time="11:00">11:00 AM</div>
+                <div class="time-option" data-time="12:00">12:00 PM</div>
+                <div class="time-option" data-time="13:00">01:00 PM</div>
+                <div class="time-option" data-time="14:00">02:00 PM</div>
+                <div class="time-option" data-time="15:00">03:00 PM</div>
+                <div class="time-option" data-time="16:00">04:00 PM</div>
+                <div class="time-option" data-time="17:00">05:00 PM</div>
+                <div class="time-option" data-time="18:00">06:00 PM</div>
+                <div class="time-option" data-time="19:00">07:00 PM</div>
+                <div class="time-option" data-time="20:00">08:00 PM</div>
+                <div class="time-option" data-time="21:00">09:00 PM</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="time-separator">
+            <span>to</span>
+          </div>
+
+          <div class="time-input-group">
+            <label for="end-time">End Time</label>
+            <div class="time-dropdown">
+              <button class="time-dropdown-btn" id="end-time-btn">
+                <span id="end-time-display">10:00 AM</span>
+                <span class="dropdown-arrow">▼</span>
+              </button>
+              <div class="time-dropdown-menu" id="end-time-menu">
+                <div class="time-option" data-time="09:00">09:00 AM</div>
+                <div class="time-option" data-time="10:00">10:00 AM</div>
+                <div class="time-option" data-time="11:00">11:00 AM</div>
+                <div class="time-option" data-time="12:00">12:00 PM</div>
+                <div class="time-option" data-time="13:00">01:00 PM</div>
+                <div class="time-option" data-time="14:00">02:00 PM</div>
+                <div class="time-option" data-time="15:00">03:00 PM</div>
+                <div class="time-option" data-time="16:00">04:00 PM</div>
+                <div class="time-option" data-time="17:00">05:00 PM</div>
+                <div class="time-option" data-time="18:00">06:00 PM</div>
+                <div class="time-option" data-time="19:00">07:00 PM</div>
+                <div class="time-option" data-time="20:00">08:00 PM</div>
+                <div class="time-option" data-time="21:00">09:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="duration-display">
+          <span class="duration-label">Duration:</span>
+          <span class="duration-value" id="duration-display">1 hour</span>
+        </div>
+      </section>
+
+      <!-- Vehicle Selection -->
+      <section class="vehicle-section">
+        <h2>Select Vehicle Type</h2>
+        <div class="vehicle-display">
+          <div class="vehicle-icon" id="vehicle-icon">🛵</div>
+          <div class="vehicle-name" id="vehicle-name">2 Wheeler</div>
+        </div>
+
+        <div class="vehicle-selector">
+          <button class="vehicle-nav-btn" id="prev-vehicle">‹</button>
+          <div class="vehicle-type-indicator">
+            <span id="current-vehicle-type">2 Wheeler</span>
+          </div>
+          <button class="vehicle-nav-btn" id="next-vehicle">›</button>
+        </div>
+
+        <!-- Pricing Tiers -->
+        <div class="pricing-tiers">
+          <!-- <div class="tier" data-tier="classic-plus">
+            <h4>Classic Plus</h4>
+            <p class="price" id="classic-plus-price">Rs. 149</p>
+            <p class="status available">Available</p>
+          </div> -->
+          <div class="tier" data-tier="prime">
+            <h4>Prime</h4>
+            <p class="price" id="prime-price">Rs. 149</p>
+            <p class="status available">Available</p>
+          </div>
+          <div class="tier" data-tier="classic">
+            <h4>Classic</h4>
+            <p class="price" id="classic-price">Rs. 99</p>
+            <p class="status available">Available</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parking Layout -->
+      <section
+        class="parking-section"
+        id="parking-layout"
+        style="display: none"
+      >
+        <h2>Select Parking Spot</h2>
+
+        <!-- Legend -->
+        <div class="legend">
+          <div class="legend-item">
+            <span class="legend-color available"></span>
+            <span>Available</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color selected"></span>
+            <span>Selected</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color bestseller"></span>
+            <span>Bestseller</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color occupied"></span>
+            <span>Occupied</span>
+          </div>
+        </div>
+
+        <!-- Parking Grid -->
+        <div class="parking-grid" id="parking-grid">
+          <!-- Parking spots will be generated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Booking Summary -->
+      <section
+        class="summary-section"
+        id="booking-summary"
+        style="display: none"
+      >
+        <div class="summary-card">
+          <h3>Booking Summary</h3>
+          <div class="summary-details">
+            <p>
+              <strong>Location:</strong> <span id="selected-location">-</span>
+            </p>
+            <p><strong>Date:</strong> <span id="selected-date">-</span></p>
+            <p><strong>Time:</strong> <span id="selected-time">-</span></p>
+            <p>
+              <strong>Parking Spot:</strong> <span id="selected-spot">-</span>
+            </p>
+            <p>
+              <strong>Vehicle Type:</strong> <span id="selected-tier">-</span>
+            </p>
+            <p>
+              <strong>Total Amount:</strong>
+              <span id="total-amount">Rs. 0</span>
+            </p>
+          </div>
+          <button class="book-btn" id="confirm-booking">Confirm Booking</button>
+        </div>
+      </section>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="btn-secondary" id="back-btn" style="display: none">
+          Back
+        </button>
+        <button class="btn-primary" id="next-btn">Select Spots</button>
+      </div>
     </div>
 
     <script src="src/script/booking.js"></script>
     <script src="src/script/script.js"></script>
-</body>
+  </body>
 </html>
