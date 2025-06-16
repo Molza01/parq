@@ -167,39 +167,7 @@ h1 {
 
 
   </div>
-  <script src="src/script/script.js"></script>
- <script>
-  const typewriterText = document.getElementById("typewriter-text");
 
-const words = ["Booking", "Parking", "Reservation"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function type() {
-  const currentWord = words[wordIndex];
-  const visibleText = currentWord.substring(0, charIndex);
-
-  typewriterText.textContent = visibleText;
-
-  if (!isDeleting && charIndex < currentWord.length) {
-    charIndex++;
-    setTimeout(type, 120);
-  } else if (isDeleting && charIndex > 0) {
-    charIndex--;
-    setTimeout(type, 60);
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) {
-      wordIndex = (wordIndex + 1) % words.length;
-    }
-    setTimeout(type, 1000);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", type);
-
- </script>
 </body>
 
 </html>
