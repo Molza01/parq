@@ -7,12 +7,12 @@
 }
 
 body {
-  background: linear-gradient(135deg, #d3cce3, #e9e4f0);
+  
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   color: #333;
   min-height: 100vh;
-  padding: 20px;
+  
 }
 
 /* Background Animation */
@@ -27,7 +27,7 @@ body {
   max-width: 900px;
   margin: 90px auto;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #d3cce3, #e9e4f0);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);

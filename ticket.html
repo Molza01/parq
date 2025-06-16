@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Parking E-Ticket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/ETicket.css">
+</head>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<body>
+    <div class="container">
+        <div id="ticket" class="ticket">
+            <div class="ticket-header">
+                <h2>🚗 Parking e-Ticket</h2>
+                <div class="eco-badge">🌱 Eco-Friendly</div>
+            </div>
+            
+            <div class="ticket-content">
+                <div class="info-row">
+                    <span class="info-label">👤 Name:</span>
+                    <span class="info-value">Rohit Bhalekar</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">🅿️ Slot:</span>
+                    <span class="info-value">P-102</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">📅 Date:</span>
+                    <span class="info-value">17 June 2025</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">⏰ Time:</span>
+                    <span class="info-value">10:00 AM - 12:00 PM</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">🎫 Booking ID:</span>
+                    <span class="info-value">#PKG56849</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <button class="download-btn" onclick="downloadTicket()">
+                📥 Download Ticket
+            </button>
+            
+            <div class="eco-message">
+                🌍 Going digital helps save trees! Thank you for choosing eco-friendly parking.
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden PDF-safe ticket -->
+<div id="ticket-pdf" style="display: none; background: white; padding: 20px; font-family: 'Poppins', sans-serif; width: 100%; max-width: 500px;">
+    <h2 style="text-align: center;">🚗 Parking e-Ticket</h2>
+    <p><strong>Name:</strong> Rohit Bhalekar</p>
+    <p><strong>Slot:</strong> P-102</p>
+    <p><strong>Date:</strong> 17 June 2025</p>
+    <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+    <p><strong>Booking ID:</strong> #PKG56849</p>
+    <hr style="margin: 20px 0;">
+    <p style="text-align: center; font-size: 0.9rem; color: #555;">
+        🌱 Thank you for choosing eco-friendly parking!
+    </p>
+</div>
+</body>
+
+<!-- externally loaded script file -->
+ <script src="src/script/ETicket.js"></script>
+</html>
