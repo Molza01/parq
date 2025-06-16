@@ -1,0 +1,475 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 20% 20%, rgba(255, 107, 107, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(72, 187, 120, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 40% 60%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 60% 30%, rgba(245, 101, 101, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.3) 0%, transparent 50%);
+        z-index: -1;
+        animation: floatParticles 15s ease-in-out infinite;
+    }
+
+    @keyframes floatParticles {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        33% { transform: translateY(-20px) rotate(120deg); }
+        66% { transform: translateY(10px) rotate(240deg); }
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .ticket {
+        margin: auto;
+        width: 380px;
+        padding: 35px;
+        border-radius: 25px;
+        background: linear-gradient(145deg, 
+            rgba(255, 255, 255, 0.95) 0%, 
+            rgba(255, 255, 255, 0.9) 100%);
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 
+            0 25px 50px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        position: relative;
+        overflow: hidden;
+        transform: perspective(1000px) rotateX(5deg);
+        transition: all 0.3s ease;
+    }
+
+    .ticket:hover {
+        transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+        box-shadow: 
+            0 35px 70px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    /* Holi color splashes */
+    .ticket::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        background: 
+            radial-gradient(circle at 15% 25%, #ff6b6b 0%, transparent 25%),
+            radial-gradient(circle at 85% 15%, #4ecdc4 0%, transparent 30%),
+            radial-gradient(circle at 25% 85%, #45b7d1 0%, transparent 25%),
+            radial-gradient(circle at 75% 75%, #f9ca24 0%, transparent 35%),
+            radial-gradient(circle at 90% 60%, #6c5ce7 0%, transparent 25%),
+            radial-gradient(circle at 10% 70%, #fd79a8 0%, transparent 30%);
+        opacity: 0.6;
+        z-index: -1;
+        animation: colorSplash 10s ease-in-out infinite;
+    }
+
+    @keyframes colorSplash {
+        0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+        50% { transform: scale(1.1) rotate(180deg); opacity: 0.8; }
+    }
+
+    /* Eco-friendly leaf decorations */
+    .ticket::after {
+        content: '🌿 🍃 🌱 🌿 🍃';
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        opacity: 0.7;
+        letter-spacing: 8px;
+        animation: leafFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes leafFloat {
+        0%, 100% { transform: translateX(-50%) translateY(0px); }
+        50% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    .ticket-header {
+        text-align: center;
+        margin-bottom: 25px;
+        padding-top: 20px;
+    }
+
+    .ticket h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .eco-badge {
+        display: inline-block;
+        background: linear-gradient(45deg, #48bb78, #38a169);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-top: 5px;
+        box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+    }
+
+    .ticket-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px 0;
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        border-left: 4px solid;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .info-row:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .info-row:nth-child(1) { border-left-color: #ff6b6b; }
+    .info-row:nth-child(2) { border-left-color: #4ecdc4; }
+    .info-row:nth-child(3) { border-left-color: #45b7d1; }
+    .info-row:nth-child(4) { border-left-color: #f9ca24; }
+    .info-row:nth-child(5) { border-left-color: #6c5ce7; }
+
+    .info-label {
+        font-weight: 600;
+        color: #2d3748;
+        font-size: 0.95rem;
+    }
+
+    .info-value {
+        font-weight: 700;
+        color: #1a202c;
+        font-size: 1rem;
+    }
+
+    .download-section {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .download-btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .download-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .download-btn:hover::before {
+        left: 100%;
+    }
+
+    .download-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+    }
+
+    .download-btn:active {
+        transform: translateY(-1px);
+    }
+
+    .eco-message {
+        margin-top: 20px;
+        padding: 15px;
+        background: linear-gradient(45deg, rgba(72, 187, 120, 0.1), rgba(56, 161, 105, 0.1));
+        border-radius: 15px;
+        border: 1px solid rgba(72, 187, 120, 0.2);
+        text-align: center;
+        color: #2d3748;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    /* Floating animation for the whole ticket */
+    .ticket {
+        animation: ticketFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes ticketFloat {
+        0%, 100% { transform: perspective(1000px) rotateX(5deg) translateY(0px); }
+        50% { transform: perspective(1000px) rotateX(5deg) translateY(-8px); }
+    }
+
+    /* Responsive design */
+    
+    /* Large screens and desktops */
+    @media (min-width: 1200px) {
+        .ticket {
+             margin: auto;
+            width: 420px;
+            padding: 45px;
+        }
+        
+        .ticket h2 {
+            font-size: 2.5rem;
+        }
+        
+        .info-row {
+            padding: 15px 25px;
+        }
+        
+        .download-btn {
+            padding: 18px 40px;
+            font-size: 1.2rem;
+        }
+    }
+    
+    /* Medium screens and tablets */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .ticket {
+             margin: auto;
+            width: 360px;
+            padding: 30px;
+        }
+        
+        .ticket h2 {
+            font-size: 2rem;
+        }
+        
+        .info-row {
+            padding: 12px 18px;
+        }
+        
+        .download-btn {
+            padding: 14px 30px;
+            font-size: 1.05rem;
+        }
+    }
+    
+    /* Small tablets and large phones */
+    @media (max-width: 768px) and (min-width: 481px) {
+        body {
+            padding: 15px;
+        }
+        
+        .ticket {
+             margin: auto;
+            width: 95%;
+            max-width: 400px;
+            padding: 30px 25px;
+        }
+        
+        .ticket h2 {
+            font-size: 1.9rem;
+        }
+        
+        .info-row {
+            padding: 12px 18px;
+            margin: 12px 0;
+        }
+        
+        .info-label, .info-value {
+            font-size: 0.95rem;
+        }
+        
+        .download-btn {
+            padding: 14px 28px;
+            font-size: 1rem;
+        }
+        
+        .eco-message {
+            font-size: 0.85rem;
+            padding: 12px;
+        }
+    }
+    
+    /* Mobile phones */
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+            justify-content: flex-start;
+            padding-top: 20px;
+        }
+        
+        .ticket {
+             margin: auto;
+            width: 100%;
+            max-width: 350px;
+            padding: 25px 20px;
+            border-radius: 20px;
+            transform: none;
+        }
+        
+        .ticket:hover {
+            transform: translateY(-5px);
+        }
+        
+        .ticket h2 {
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+        }
+        
+        .eco-badge {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+        }
+        
+        .info-row {
+            flex-direction: column;
+            text-align: center;
+            gap: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+        
+        .info-value {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        
+        .download-btn {
+            padding: 12px 25px;
+            font-size: 0.95rem;
+            width: 100%;
+            max-width: 280px;
+        }
+        
+        .eco-message {
+            font-size: 0.8rem;
+            padding: 12px;
+            margin-top: 15px;
+        }
+        
+        .download-section {
+            margin-top: 30px;
+            width: 100%;
+        }
+    }
+    
+    /* Extra small phones */
+    @media (max-width: 360px) {
+        .ticket {
+             margin: auto;
+            padding: 20px 15px;
+        }
+        
+        .ticket h2 {
+            font-size: 1.5rem;
+        }
+        
+        .info-row {
+            padding: 12px;
+        }
+        
+        .info-label, .info-value {
+            font-size: 0.85rem;
+        }
+        
+        .download-btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+        
+        .eco-message {
+            font-size: 0.75rem;
+            padding: 10px;
+        }
+    }
+    
+    /* Landscape orientation for phones */
+    @media (max-height: 500px) and (orientation: landscape) {
+        body {
+            padding: 10px;
+            justify-content: center;
+        }
+        
+        .ticket {
+             margin: auto;
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+        }
+        
+        .ticket h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        
+        .info-row {
+            flex-direction: row;
+            padding: 8px 15px;
+            margin: 8px 0;
+        }
+        
+        .download-section {
+            margin-top: 20px;
+        }
+        
+        .download-btn {
+            padding: 10px 25px;
+        }
+        
+        .eco-message {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 0.8rem;
+        }
+    }
+
